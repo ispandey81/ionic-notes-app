@@ -1,20 +1,21 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      Notes
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content id="container">
+  <ng-container *ngIf="!isEmpty()">
+  <ion-card *ngFor="let item of list; trackBy:trackElement" [style.background-color]="item.color">
+    <ion-card-header>
+        {{item.lastUpdated | date: 'medium'}}
+    </ion-card-header>
+    <ion-card-content (click) = "updateItem(item)">
+      {{item.value}}
+    </ion-card-content>
+  </ion-card>
+</ng-container>
+    <ion-icon name="add-circle" class="addBtn" [routerLink]="['/add-note']"></ion-icon>
 </ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{headerLabel}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="undoBtn">
+      <ion-icon name="refresh-circle" class="iconSize" (click) = "clearInput()"></ion-icon>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+    <ion-textarea auto-grow="true" #textInput (click) = "showKeyboard()"></ion-textarea>   
+</ion-col>
+</ion-row>
+<ion-row class="buttons">
+  <p>Choose a color</p>
+</ion-row>
+<ion-row class="buttons">
+  <ion-icon name="square" class="aquamarine" (click) = "setColor('aquamarine')"></ion-icon>
+  <ion-icon name="square" class="pink" (click) = "setColor('pink')"></ion-icon>
+  <ion-icon name="square" class="yellow" (click) = "setColor('yellow')"></ion-icon>
+</ion-row>
+<ion-row class="buttons">
+  <ion-icon name="square" class="coral" (click) = "setColor('coral')"></ion-icon>
+  <ion-icon name="square" class="lavender" (click) = "setColor('lavender')"></ion-icon>
+  <ion-icon name="square" class="lightblue" (click) = "setColor('lightblue')"></ion-icon>
+</ion-row>
+<br>
+<ion-row class="buttons">
+    <ion-icon name="checkmark-circle" class="iconSize" (click) = "saveNote()"></ion-icon>
+    <ion-icon name="close-circle" class="iconSize" [routerLink] = "['/home']" style="margin-left: 30px;"></ion-icon>
+    <ion-icon name="remove-circle" class="iconSize" (click) = "deleteNote()" *ngIf="enableDelete" style="margin-left: 30px;"></ion-icon>
+    </ion-row>
+  </ion-grid>
+</ion-content>

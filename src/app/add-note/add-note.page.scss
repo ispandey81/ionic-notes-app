@@ -1,0 +1,40 @@
+.iconSize {
+    font-size: 3em;
+    color: var(--ion-color-primary-shade);
+}
+.buttons {
+    justify-content: center;
+}
+.undoBtn {
+    justify-content: flex-end;
+}
+ion-textarea {
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--ion-color-primary-tint);
+    min-height: 15em;
+}
+.aquamarine {
+    font-size: 2em;
+    color: aquamarine;
+}
+.pink {
+    font-size: 2em;
+    color: pink;
+}
+.yellow {
+    font-size: 2em;
+    color: yellow;
+}
+.coral {
+    font-size: 2em;
+    color: coral;
+}
+.lavender {
+    font-size: 2em;
+    color: lavender
+}
+.lightblue {
+    font-size: 2em;
+    color: lightblue;
+}
